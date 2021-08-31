@@ -149,8 +149,8 @@ main {
 
       #image {
         position: relative;
-        right: 0;
-        top: 5px;
+        right: 20px;
+        top: 0;
         width: auto;
         transform: scale(1.3);
       }
