@@ -97,6 +97,7 @@ main {
         position: absolute;
         right: 24%;
         margin-top: 7px;
+        transition: transform 0.3s;
       }
 
         .arrow-up {
