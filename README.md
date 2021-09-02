@@ -34,11 +34,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Solution Screenshot](Screenshot Frontend Mentor FAQ Accordion Card.png)
+![Solution Screenshot](./Screenshot Frontend Mentor FAQ Accordion Card.png)
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/faq-card-with-css-flexbox-js-dom-properties-desktopfirst-workflow-5hcrnBU2U)
 - [Live Site URL](https://rich15.github.io/FAQ-accordion-fEndMentor/)
 
 
