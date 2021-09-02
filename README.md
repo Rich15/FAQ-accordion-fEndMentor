@@ -14,7 +14,6 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
     - [Multiple Overlaps](#multiple-overlaps)
     - [DOM Manipulation](#dom-manipulation)
     - [Picture element and responsive design](#picture-element-and-responsive-design)
-    - [Summary](#summary)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
@@ -25,6 +24,8 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 
 ### The challenge
 
+Create a FAQ card.
+
 Users should be able to:
 
 - View the optimal layout for the component depending on their device's screen size
@@ -33,7 +34,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Solution Screenshot](Screenshot Frontend Mentor FAQ Accordion Card.png)
 
 ### Links
 
@@ -54,18 +55,71 @@ Users should be able to:
 
 ### What I learned
 
-**This is my fourth Frontend Mentor Challenge**
+***This is my fourth Frontend Mentor Challenge***
 
 #### Multiple overlaps
 
+I think this was the most difficult part of the challenge. At first I thought I could play with `z-index` to make the images overlap each other in the desktop layout, and after trying different things I realized I couldn't do it. I was *losing my mind* until I found [this post](https://stackoverflow.com/questions/26644163/how-to-make-3-elements-overlap-each-other-with-css) in Stack overflow, which gave me the idea to do "fake backgrounds" like this:  
+
+```html
+<div id="fake-bg-x"></div> <!--Horizontal-->
+<div id="fake-bg-y"></div><!--Vertical-->
+```  
+
+*Styles:*  
+
+```css
+#fake-bg-x {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 63%;
+  height: 9.5%;
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(273, 75%, 62%));
+  z-index: 2;
+}
+
+#fake-bg-y {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 15%;
+  height: 100%;
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  z-index: 2;
+}
+```
+
+Even though they are not perfect, I'm pretty sastified with the results and the function they fullfil. However, I'd like to find an easier/better-looking solution for this problem.
+
 #### DOM manipulation
+
+I got to practice my skills with Javascript's DOM properties and learned to use some, like `nextElementSibling`. Beggining the challenge I kinda had the idea on how to make the accordion but at some point I didn't know how to display the corresponding answer each time. Finally I encountered `nextElementSibling` and solved my problem.
 
 #### Picture element and responsive design
 
-#### Summary
+`<picture>` element is awesome! Until now I was using the good ol' `<img>`, but from now on `<picture>` is my new best friend! Ok, i may keep using `<img>` still, but I discovered the wonders of `<picture>` and its uses in responsive design. Thanks to this challenge I learned how to display different images based on each device. My code was:  
+
+```html
+<picture>
+   <source srcset="images/bg-pattern-mobile.svg" media="(max-width: 1125px)" alt="">
+   <img id="bg-pattern" src="images/bg-pattern-desktop.svg" alt="">
+</picture>
+<img id="box" srcset="images/illustration-box-desktop.svg" alt="">
+<picture>
+<source srcset="images/illustration-woman-online-mobile.svg" media="(max-width: 1125px)">
+   <img id="woman" src="images/illustration-woman-online-desktop.svg" alt="Woman on a computer (illustration)">
+</picture>
+```
+
+Because the "box" image didn't appear in mobile devices, I simply used `display: none;` in my Media Queries to delete it. From here I will use the `<picture>` element to make my sites more responsive.
 
 ### Continued development
 
+- I will continue to improve my Flexbox abilities (and Grid too).
+- I will start making more pages using Javascript and DOM manipulation.
+- I wanna find a more efficient way to achieve the "multiple overlap" effect.
+- I will improve the responsiveness of my pages, as well as their accesibility.
 
 ### Useful resources
 
@@ -82,4 +136,4 @@ Users should be able to:
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+Thanks to [JimmyRare](https://stackoverflow.com/users/1300012/jimmyrare) for the inspiration on the overlapping solution ;)
