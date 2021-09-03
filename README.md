@@ -92,6 +92,12 @@ I think this was the most difficult part of the challenge. At first I thought I 
 
 Even though they are not perfect, I'm pretty sastified with the results and the function they fullfil. However, I'd like to find an easier/better-looking solution for this problem.
 
+#####**UPDATE**
+
+After thinking for some time I figured out that `overflow: hidden` was what I was looking for. Now I needed to know how to make the orange box to 'escape' the overflow. [This answer](https://stackoverflow.com/questions/8837050/allow-specific-tag-to-override-overflowhidden/29687454#:~:text=The%20trick%20is%20to%20keep%20the%20overflow%3Ahidden%20element%20with%20position%3Astatic%20and%20position%20the%20overflowing%20element%20relative%20to%20a%20higher%20parent%20(rather%20than%20the%20overflow%3Ahidden%20parent).%20Like%20so%3A) from Stack overflow (what a coincidence) helped me a lot; basically I moved the box outside of the "image" article and added `position: relative` to the body, besides some image adjusting.
+
+*Case solved ;)*
+
 #### DOM manipulation
 
 I got to practice my skills with Javascript's DOM properties and learned to use some, like `nextElementSibling`. Beggining the challenge I kinda had the idea on how to make the accordion but at some point I didn't know how to display the corresponding answer each time. Finally I encountered `nextElementSibling` and solved my problem.
@@ -118,13 +124,14 @@ Because the "box" image didn't appear in mobile devices, I simply used `display:
 
 - I will continue to improve my Flexbox abilities (and Grid too).
 - I will start making more pages using Javascript and DOM manipulation.
-- I wanna find a more efficient way to achieve the "multiple overlap" effect.
+- ~~I wanna find a more efficient way to achieve the "multiple overlap" effect.~~ See [Update](#update).
 - I will improve the responsiveness of my pages, as well as their accesibility.
 
 ### Useful resources
 
 - [A complete guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This article is really useful to have all Flexbox properties on hand.
-- [Overlapping three elements](https://stackoverflow.com/questions/26644163/how-to-make-3-elements-overlap-each-other-with-css) - This Stack Overflow post gave me the idea to use the fake backgrounds to make the images overlap each other.
+- [Overlapping three elements](https://stackoverflow.com/questions/26644163/how-to-make-3-elements-overlap-each-other-with-css) - This Stack Overflow post gave me the idea to use the fake backgrounds to make the images overlap each other. (See next link)
+- [Specific element overriding overflow: hidden](https://stackoverflow.com/questions/8837050/allow-specific-tag-to-override-overflowhidden/29687454#29687454) - Thanks to this post I discovered how to make the orange box escape the `overflow: hidden;` property of `main`. No more fake backgrounds!
 - [How to create an accordion](https://www.w3schools.com/howto/howto_js_accordion.asp) - This w3 Schools tutorial helped me to end the accordion when I was stucked. It also helped to understand class toggling with Javascript.
 
 
@@ -136,4 +143,5 @@ Because the "box" image didn't appear in mobile devices, I simply used `display:
 
 ## Acknowledgments
 
-Thanks to [JimmyRare](https://stackoverflow.com/users/1300012/jimmyrare) for the inspiration on the overlapping solution ;)
+Thanks to [JimmyRare](https://stackoverflow.com/users/1300012/jimmyrare) for the inspiration on the overlapping solution.
+And thanks to [parliament](https://stackoverflow.com/users/1267778/parliament) and [meagar](https://stackoverflow.com/users/229044/meagar) for the answer on the overflow problem ;)
