@@ -92,7 +92,7 @@ I think this was the most difficult part of the challenge. At first I thought I 
 
 Even though they are not perfect, I'm pretty sastified with the results and the function they fullfil. However, I'd like to find an easier/better-looking solution for this problem.
 
-#####**UPDATE**
+#####UPDATE
 
 After thinking for some time I figured out that `overflow: hidden` was what I was looking for. Now I needed to know how to make the orange box to 'escape' the overflow. [This answer](https://stackoverflow.com/questions/8837050/allow-specific-tag-to-override-overflowhidden/29687454#:~:text=The%20trick%20is%20to%20keep%20the%20overflow%3Ahidden%20element%20with%20position%3Astatic%20and%20position%20the%20overflowing%20element%20relative%20to%20a%20higher%20parent%20(rather%20than%20the%20overflow%3Ahidden%20parent).%20Like%20so%3A) from Stack overflow (what a coincidence) helped me a lot; basically I moved the box outside of the "image" article and added `position: relative` to the body, besides some image adjusting.
 
